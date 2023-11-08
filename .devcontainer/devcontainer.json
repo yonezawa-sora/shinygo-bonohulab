@@ -1,9 +1,17 @@
-{   // https://github.com/microsoft/vscode-dev-containers/blob/main/containers/r/.devcontainer/devcontainer.json
-	"name": "R (Community)",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
 
+{
+		"name": "R (Community)",
+		"build": {
+		  "context": "..",
+		  "dockerfile": "./Dockerfile",
+		  "image": "shinygo",
+		  "args": {
+			"VARIANT": "4.1"
+		  }
+		},
+		"runArgs": [
+			"--init"
+			],
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
@@ -27,13 +35,16 @@
 			]
 		}
 	},
-
+	"remoteUser": "vscode",
+	"features": { //https://code.visualstudio.com/blogs/2022/09/15/dev-container-features#_features
+        //https://containers.dev/features ← ここに書き方が記載されている
+    "ghcr.io/devcontainers/features/docker-in-docker:2": "latest",
+		"ghcr.io/devcontainers/features/git:1": "os-provided"
+    }
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "R --version",
-
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "rstudio"
+	//"remoteUser": "rstudio"
 }
