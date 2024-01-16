@@ -1,8 +1,8 @@
 
 {
-		"name": "R (Community)",
+		"name": "ShinyGO-bonohulab",
 		"build": {
-		  "context": "..",
+		  "context": ".",
 		  "dockerfile": "Dockerfile",
 		  "args": {
 			"VARIANT": "4.0.5"
