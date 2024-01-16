@@ -3,10 +3,9 @@
 		"name": "R (Community)",
 		"build": {
 		  "context": "..",
-		  "dockerfile": "./Dockerfile",
-		  "image": "shinygo",
+		  "dockerfile": "Dockerfile",
 		  "args": {
-			"VARIANT": "4.1"
+			"VARIANT": "4.0.5"
 		  }
 		},
 		"runArgs": [
@@ -37,14 +36,9 @@
 	},
 	"remoteUser": "vscode",
 	"features": { //https://code.visualstudio.com/blogs/2022/09/15/dev-container-features#_features
-        //https://containers.dev/features ← ここに書き方が記載されている
+        //https://containers.dev/features 
     "ghcr.io/devcontainers/features/docker-in-docker:2": "latest",
 		"ghcr.io/devcontainers/features/git:1": "os-provided"
-    }
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "R --version",
-	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	//"remoteUser": "rstudio"
+    },
+	"forwardPorts": [3838]
 }
