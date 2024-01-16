@@ -2,11 +2,8 @@
 {
 		"name": "ShinyGO-bonohulab",
 		"build": {
-		  "context": ".",
-		  "dockerfile": "Dockerfile",
-		  "args": {
-			"VARIANT": "4.0.5"
-		  }
+		  "context": "./",
+		  "dockerfile": "Dockerfile"
 		},
 		"runArgs": [
 			"--init"
