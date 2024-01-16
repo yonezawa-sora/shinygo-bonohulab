@@ -21,10 +21,10 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"reditorsupport.r",
 				"rdebugger.r-debugger",
-                "Posit.shinyuieditor",
-                "Posit.shiny-python"
+				"Posit.shinyuieditor",
+				"Posit.shiny-python",
+				"REditorSupport.r",
 			]
 		}
 		},
