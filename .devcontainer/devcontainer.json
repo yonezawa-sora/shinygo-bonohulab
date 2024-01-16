@@ -1,18 +1,25 @@
-
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/rocker-org/devcontainer-templates/tree/main/src/r-ver
 {
-		"name": "ShinyGO-bonohulab",
-		"build": {
-		  "context": "./",
-		  "dockerfile": "Dockerfile"
-		},
-		"runArgs": [
-			"--init"
-			],
+	"name": "R (rocker/r-ver base)",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "ghcr.io/rocker-org/devcontainer/r-ver:4",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": "latest",
+        "ghcr.io/devcontainers/features/git:1": "os-provided"
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [3838],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "R -e 'install.packages(c('shiny', 'RSQLite', 'ggplot2', 'gridExtra', 'plotly', 'reshape2', 'visNetwork', 'DT', 'STRINGdb', 'pathview', 'dplyr', 'shinyBS', 'shinyjs', 'reactable'), dependencies = TRUE)'",
+
 	// Configure tool-specific properties.
 	"customizations": {
-		// Configure properties specific to VS Code.
 		"vscode": {
-			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"reditorsupport.r",
 				"rdebugger.r-debugger",
@@ -20,12 +27,7 @@
                 "Posit.shiny-python"
 			]
 		}
-	},
-	"remoteUser": "vscode",
-	"features": { //https://code.visualstudio.com/blogs/2022/09/15/dev-container-features#_features
-        //https://containers.dev/features 
-    "ghcr.io/devcontainers/features/docker-in-docker:2": "latest",
-		"ghcr.io/devcontainers/features/git:1": "os-provided"
-    },
-	"forwardPorts": [3838]
+		},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "root"
 }
