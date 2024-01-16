@@ -1,5 +1,4 @@
-ARG VARIANT="4.0.5"
-FROM rocker/r-ver:${VARIANT}
+FROM rocker/r-ver:latest
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
