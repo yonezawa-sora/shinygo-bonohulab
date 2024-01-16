@@ -16,7 +16,7 @@
 	"forwardPorts": [3838],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "R -e 'install.packages(c('shiny', 'RSQLite', 'ggplot2', 'gridExtra', 'plotly', 'reshape2', 'visNetwork', 'DT', 'STRINGdb', 'pathview', 'dplyr', 'shinyBS', 'shinyjs', 'reactable'), dependencies = TRUE)'",
+	"postCreateCommand": "R -e \"install.packages(c('shiny', 'RSQLite', 'ggplot2', 'gridExtra', 'plotly', 'reshape2', 'visNetwork', 'DT', 'STRINGdb', 'pathview', 'dplyr', 'shinyBS', 'shinyjs', 'reactable'), dependencies = TRUE)\"",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -34,5 +34,5 @@
 		}
 		},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	"remoteUser": "vscode"
+	"remoteUser": "root"
 }
