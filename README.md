@@ -3,7 +3,7 @@
 ## Get Data (ShinyGO version 0.80)
 
 ```shell
-wget -r -np http://bioinformatics.sdstate.edu/data/data107/
+wget -r -np -c http://bioinformatics.sdstate.edu/data/data107/
 ```
 
 This was previously hosted alongside iDEP at the [iDEP](https://github.com/iDEP-SDSU/idep) repository. 
