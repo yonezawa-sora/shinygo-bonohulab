@@ -30,7 +30,7 @@ ui <- fluidPage(
   ),
   sidebarLayout(
     sidebarPanel(
-      titlePanel("ShinyGO bonohulab"),
+      titlePanel("ShinyGO 0.77"),
       h5("Select or search your species:"),
       fluidRow(
         column(9, selectizeInput("selectOrg",
